@@ -8,3 +8,9 @@ GET  http://localhost:3001/api/persons/3
 
 ###
 GET  http://localhost:3001/api/persons/5
+
+### 
+DELETE  http://localhost:3001/api/persons/3
+
+### 
+DELETE  http://localhost:3001/api/persons/5
