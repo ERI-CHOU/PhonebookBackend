@@ -20,7 +20,7 @@ POST http://localhost:3001/api/persons
 Content-Type: application/json
 
 {
-    "name": "sample name",
+    "name": "test name1",
     "number": "11-2345678"
 }
 
@@ -31,4 +31,22 @@ Content-Type: application/json
 {
     "name": "",
     "number": "00-98764422"
+}
+
+###
+POST http://localhost:3001/api/persons 
+Content-Type: application/json
+
+{
+    "name": "test name2",
+    "number": ""
+}
+
+###
+POST http://localhost:3001/api/persons 
+Content-Type: application/json
+
+{
+    "name": "test name1",
+    "number": "22-38557697"
 }
