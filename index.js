@@ -81,7 +81,7 @@ app.post('/api/persons', (request, response, next) => {
   .catch(error => next(error))
 })
 
-app.put('/api/persons/:id', (request, response) => {
+app.put('/api/persons/:id', (request, response, next) => {
   const body = request.body
 
   const person = {
@@ -89,14 +89,11 @@ app.put('/api/persons/:id', (request, response) => {
     "number": body.number,
   }
 
-  Person.findByIdAndUpdate(request.params.id, person, { new: true })
+  Person.findByIdAndUpdate(request.params.id, person, { new: true, runValidators: true })
     .then(updatePerson => {
       response.json(updatePerson)
     })
-    .catch(error => {
-      console.log(error)
-      response.status(400).end()
-    })
+    .catch(error => next(error))
 })
 
 const unknownEndpoint = (requst, response) => {
